@@ -5,7 +5,7 @@ function InstructionsCard(props) {
     console.log('props', props)
 
     return (
-        <div className="instructions-card">
+        <div>
             <img src={props.img} alt="" />
             <p>{props.data}</p>
         </div>
