@@ -1,4 +1,4 @@
-export default const list=[
+export  const list=[
     {
       "id": 16,
       "zone": {

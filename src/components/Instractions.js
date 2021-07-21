@@ -21,7 +21,7 @@ export default function Instractions() {
             <Card>
                 <InstructionsCard
                     img={require("../img/ico-03.svg").default}
-                    data='When the time comes, use the specialFastRider line to cut out a considerable wait time'
+                    data='When the time comes, use the special FastRider line to cut out a considerable wait time'
                 />
             </Card>
         </Container>
@@ -31,9 +31,8 @@ export default function Instractions() {
 const Container = styled.div`
 display: flex;
 justify-content: space-between;
-width: 50vw;
 `
 const Card = styled.div`
-width: 26%;
+width: 28%;
 font-size: 1.1rem;
 `
