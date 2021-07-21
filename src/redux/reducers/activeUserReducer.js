@@ -1,34 +1,25 @@
 import * as AT from "../actions/actionsTypes";
 
 const initialState = {
-  activeUser: "",
-  userData:""
+  availableTickets: "",
+  userOrder:""
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case AT.ON_LOGIN:
+    case AT.ON_ENTER:
       return {
         ...state,
-        activeUserToken: action.payload.token,
-        userData:action.payload.user,
-        activeUser: true
+        availableTickets: action.payload
       };
-    case AT.ON_LOGOUT:
+    case AT.ON_SUBMIT:
       return {
         ...state,
-        activeUserToken: "",
-        activeUser: false
-      };
-
-    case AT.ON_UPDATE:
-      return {
-        ...state,
-        userData: {...action.payload},
+       userOrder: action.payload
       };
     default:
       return state;
   }
 };
 
-export default activeUserReducer;
+export default reducer;

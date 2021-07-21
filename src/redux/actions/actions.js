@@ -1,21 +1,15 @@
 import * as AT from './actionsTypes'
 
-export const onLogin = (token) => dispatch => {
+export const onEnter = (data) => dispatch => {
     return (dispatch({
-        type: AT.ON_LOGIN,
-        payload: token
+        type: AT.ON_ENTER,
+        payload: data
     }))
 }
 
-export const onLogOut = () => dispatch => {
+export const onSubmit = (ticket) => dispatch => {
     return (dispatch({
-        type: AT.ON_LOGOUT
-    }))
-}
-
-export const onUpdate = (userdata) => dispatch => {
-    return (dispatch({
-        type: AT.ON_UPDATE,
-        payload: userdata
+        type: AT.ON_SUBMIT,
+        payload: ticket
     }))
 }

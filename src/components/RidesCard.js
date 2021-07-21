@@ -7,7 +7,7 @@ export default function RidesCard(props) {
     const data = props.obj;
     const time = moment(data.return_time).format("HH:mm")
     return (
-        <Container color={data.zone.color}>
+        <Container value={data.id} color={data.zone.color}>
             <H2>{data.zone.name}</H2>
             <H1>{data.name}</H1>
             <TicketInfo>

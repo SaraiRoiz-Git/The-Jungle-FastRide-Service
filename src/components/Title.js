@@ -10,18 +10,16 @@ export default function Title() {
 
 const PageTitle = styled.div`
 display:flex;
-margin-bottom: 3.5rem;
+margin: 0 auto 3rem auto;
 `
-
 const H1 = styled.h1`
 font-weight: 300;
-font-size: 2.4rem;
+font-size: 2.4em;
 color: white;
-
 `
 const Span = styled.div`
 color: white;
 font-size: 0.8rem;
-margin-right: 0.8rem;
+margin-right: 0.8em;
 padding-top: 2.6rem;
 `

@@ -1,21 +1,43 @@
 import React from 'react'
-import { list } from '../tmp';
 import RidesCard from './RidesCard';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import * as action from "../redux/actions/actions";
+import { useEffect } from 'react';
+import { getFastRiderRides } from '../axios';
 
 export default function RidesGallery() {
+    const dispatch = useDispatch()
+    const [error, setError] = useState('')
 
-    const listA = list;
-    const cardsList = list.map(currCard => {
+    const callbackSucss = response => {
+        if (response) {
+            dispatch(action.onEnter(response));
+        }
+    }
+
+    const callbackFailur = () => {
+        setError("Email is alredy exit");
+    };
+
+    useEffect(() => {
+        getFastRiderRides(callbackSucss, callbackFailur)
+    }, [])
+
+    let list = useSelector(state => state.availableTickets)
+   
+    const cardsList = list?list.map(currCard => {
         return (
             <RidesCard
                 obj={currCard}
             />
         )
-    });
+    }):null
+
     return (
         <Container>
-            {cardsList}
+             {cardsList}
         </Container>
     )
 }
