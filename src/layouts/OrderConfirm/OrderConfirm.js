@@ -1,16 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
+import InstructionsCard from '../../components/InstructionsCard'
+import ReceiptCard from '../../components/ReceiptCard'
 import Title from '../../components/Title'
-import InstractionsCard from '../components/InstructionsCard'
+
 
 export default function OrderConfirm() {
     return (
+
         <Container>
-            <Title></Title>
-            <InstractionsCard
-                img={require("../img/ico-04.svg").default}
-                data='Thank you for using The Jungle MT FastRider ticket system = access code is now redy'
-            />
+            <Title />
+            <AnswerContainer>
+                <InstructionsCard
+                    img={require("../../img/ico-04.svg").default}
+                    data='Thank you for using The Jungle MT FastRider ticket system = access code is now redy'
+                />
+                <ReceiptCard/>
+            </AnswerContainer>
+
+
         </Container>
     )
 }
@@ -20,3 +28,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 `
+const AnswerContainer = styled.div`
+width: 25vw;
+`
+
+

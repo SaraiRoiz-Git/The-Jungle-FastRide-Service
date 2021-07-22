@@ -6,7 +6,6 @@ import RidesGallery from '../../components/RidesGallery'
 import Title from '../../components/Title'
 
 function Homepage() { 
-
   return (
     <Container>
       <Title></Title>

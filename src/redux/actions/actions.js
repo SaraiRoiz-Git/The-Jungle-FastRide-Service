@@ -13,3 +13,17 @@ export const onSubmit = (ticket) => dispatch => {
         payload: ticket
     }))
 }
+
+export const onRideChoose = (id) => dispatch => {
+    return (dispatch({
+        type: AT.ID,
+        payload: id
+    }))
+}
+
+export const onError = (error) => dispatch => {
+    return (dispatch({
+        type: AT.ON_ERROR,
+        payload: error
+    }))
+}

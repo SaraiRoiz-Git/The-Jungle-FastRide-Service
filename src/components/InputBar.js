@@ -1,16 +1,45 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
+import * as utils from "../utilities"
+import * as action from "../redux/actions/actions";
+import { postFastRiderTikets } from '../axios';
+import { useHistory } from "react-router-dom";
 
 export default function InputBar() {
+   
+    const dispatch = useDispatch()
     const [inputValue, setInputValue] = useState("")
+    const [errors, setErrors] = useState("")
+    const id = useSelector(state => state.id)
+    const history = useHistory();
 
-    const onPinSubmit = () => {
-        return
+
+    const callbackSucss = response => {
+        if (response) {
+            dispatch(action.onSubmit(response.data));
+        }
+    }
+
+    const callbackFailur = (response) => {
+        dispatch(action.onError(response.data))
+        setErrors("Could not order fast ride");
+    };
+
+    const onPinSubmit = (e) => {
+        if (utils.isPInValid(inputValue) ) {
+            postFastRiderTikets(callbackSucss, callbackFailur, inputValue, id)
+            history.push("/confirmation")
+
+        } else {
+            setErrors('Incorrect pin number ')
+        }
+
     }
     return (
         <Container>
-            <Input type="text" placeholder="#PIN" name="pin" onChange={()=>setInputValue()} />
-            <Button type="button" onClick={()=>onPinSubmit()}>SUBMIT</Button>
+            <Input type="text" placeholder="#PIN" name="pin" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+            <Button type="button" onClick={() => onPinSubmit()}>SUBMIT</Button>
         </Container>
     )
 }
