@@ -16,13 +16,13 @@ export default function RidesCard(props) {
     const time = moment(data.retuidme).format("HH:mm")
     const chosenId = useSelector(state => state.id)
 
-    // useEffect(() => {
-    //     console.log("chosenId", chosenId)
-    //     if (id !== chosenId) {
-    //         setChoose(false)
-    //         setRideId(0)
-    //     }
-    // }, [chosenId,id])
+    useEffect(() => {
+        console.log("chosenId", chosenId, typeof chosenId)
+        console.log("Id", id, typeof id)
+        if (id !== chosenId) {
+            setChoose(false)
+        }
+    }, [chosenId])
 
     const updateCosenRide = () => {
         setChoose(!chosen)
@@ -65,14 +65,14 @@ background-color:${({ backgroundColor }) => backgroundColor};
 margin:5px 0;
 padding: 5px 10px;
 border-top: 4px solid ${({ color }) => color} ;
-width: 140px;
-height: 140px;
+width: 142px;
+height: 142px;
 display:flex;
 flex-direction: column;
 justify-content:space-between;
 @media (max-width: 768px) {
-    width:25vw;
-    height: 25vw;
+    width:25.5vw;
+    height: 25.5vw;
   }
 @media (max-width: 480px) {
     width:44vw;

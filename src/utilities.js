@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const isPInValid = (pin) => {
     if (pin.length !== 15) {
         return false;
@@ -19,6 +21,10 @@ export const isPInValid = (pin) => {
     return true
 }
 
+export const isTimeValid = () => {
+    const currTime = parseInt(moment().format('HH'))
+    return (9 <= currTime && currTime < 19)
+}
 
 const calcLetter = (str) => {
     let total = 0;

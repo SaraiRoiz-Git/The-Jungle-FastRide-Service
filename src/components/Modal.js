@@ -14,16 +14,18 @@ const Container = styled.div`
 position: absolute;
 background-color:  #373737;
 margin: auto;
-width: 30vw;
+width: 400px;
+left:50%;
+margin-left:-200px;
+top:-50px;
 display:${({ display }) => display};
 flex-direction: column;
 align-items: center;
+border:0.5px solid white  ;
 
 @media (max-width: 480px) {
     width: 90vw;
-      
-    }
-  }
+}
 `
 const Close = styled.div`
 align-self: flex-end;

@@ -2,7 +2,8 @@ import * as AT from "../actions/actionsTypes";
 
 const initialState = {
   availableTickets: "",
-  userOrder: ""
+  userOrder: "",
+  id:0
 };
 
 const reducer = (state = initialState, action) => {
@@ -23,12 +24,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         id: action.payload
       };
-      case AT.ON_ERROR:
-        return {
-          ...state,
-          error: action.payload
-        };
-
+    
     default:
       return state;
   }

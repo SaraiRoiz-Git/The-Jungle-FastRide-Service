@@ -35,26 +35,31 @@ export default function InputBar() {
     };
 
     const onPinSubmit = (e) => {
-        if (utils.isPInValid(inputValue)) {
+        if (!utils.isTimeValid()) {
+            setModal(true);
+            setErrors("The Jungle FastRider is now close!  The opening hours is between 9:00 to 19:00 ")
+        }
+        else if (id == 0) {
+            setModal(true);
+            setErrors("You need to choose a ride")
+        }
+        else if (!utils.isPInValid(inputValue)) {
+            setModal(true);
+            setErrors('Incorrect pin number')
+        }
+        else {
             postFastRiderTikets(callbackSucss, callbackFailur, inputValue, id)
 
-
-        } else {
-            console.log("worng code")
-            setModal(true);
-            setErrors('Incorrect pin number ')
         }
 
     }
     return (
-        <div>
-            <Container>
-                <Input type="text" placeholder="#PIN" name="pin" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-                <Button type="button" onClick={() => onPinSubmit()}>SUBMIT</Button>
 
-            </Container>
+        <Container>
+            <Input type="text" placeholder="#PIN" name="pin" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+            <Button type="button" onClick={() => onPinSubmit()}>SUBMIT</Button>
             <Modal closeModal={() => setModal(false)} message={errors} display={modal} />
-        </div>
+        </Container>
 
     )
 }
@@ -63,7 +68,7 @@ const Container = styled.div`
     display:flex;
     border-top:1px solid grey;
     margin: 2rem 0;
-
+    position: relative;
     @media (max-width: 480px) {
         display:block;
       }
@@ -82,7 +87,6 @@ const Button = styled.button`
     width: 23%;
     color:white;
     border:none;
-    
     &:hover{
         background-color: #606060; 
     }
@@ -97,6 +101,5 @@ const Button = styled.button`
         right:0;
         bottom:0;
         font-size:1.1rem;
-
       }
 `

@@ -20,10 +20,3 @@ export const onRideChoose = (id) => dispatch => {
         payload: id
     }))
 }
-
-export const onError = (error) => dispatch => {
-    return (dispatch({
-        type: AT.ON_ERROR,
-        payload: error
-    }))
-}
