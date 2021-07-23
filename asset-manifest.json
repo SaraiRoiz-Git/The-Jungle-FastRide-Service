@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/The-Jungle-FastRide-Service/static/css/main.92b766fb.chunk.css",
+    "main.js": "/The-Jungle-FastRide-Service/static/js/main.6e791ef1.chunk.js",
+    "main.js.map": "/The-Jungle-FastRide-Service/static/js/main.6e791ef1.chunk.js.map",
+    "runtime-main.js": "/The-Jungle-FastRide-Service/static/js/runtime-main.78b0a4be.js",
+    "runtime-main.js.map": "/The-Jungle-FastRide-Service/static/js/runtime-main.78b0a4be.js.map",
+    "static/js/2.cbe1cf85.chunk.js": "/The-Jungle-FastRide-Service/static/js/2.cbe1cf85.chunk.js",
+    "static/js/2.cbe1cf85.chunk.js.map": "/The-Jungle-FastRide-Service/static/js/2.cbe1cf85.chunk.js.map",
+    "static/js/3.4528df81.chunk.js": "/The-Jungle-FastRide-Service/static/js/3.4528df81.chunk.js",
+    "static/js/3.4528df81.chunk.js.map": "/The-Jungle-FastRide-Service/static/js/3.4528df81.chunk.js.map",
+    "index.html": "/The-Jungle-FastRide-Service/index.html",
+    "static/css/main.92b766fb.chunk.css.map": "/The-Jungle-FastRide-Service/static/css/main.92b766fb.chunk.css.map",
+    "static/js/2.cbe1cf85.chunk.js.LICENSE.txt": "/The-Jungle-FastRide-Service/static/js/2.cbe1cf85.chunk.js.LICENSE.txt",
+    "static/media/ico-01.svg": "/The-Jungle-FastRide-Service/static/media/ico-01.f10f49f4.svg",
+    "static/media/ico-02.svg": "/The-Jungle-FastRide-Service/static/media/ico-02.97603741.svg",
+    "static/media/ico-03.svg": "/The-Jungle-FastRide-Service/static/media/ico-03.237c47a5.svg",
+    "static/media/ico-04.svg": "/The-Jungle-FastRide-Service/static/media/ico-04.cb124183.svg",
+    "static/media/ico-g-01.svg": "/The-Jungle-FastRide-Service/static/media/ico-g-01.b07897b4.svg",
+    "static/media/ico-g-03.svg": "/The-Jungle-FastRide-Service/static/media/ico-g-03.96cb8188.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.78b0a4be.js",
+    "static/js/2.cbe1cf85.chunk.js",
+    "static/css/main.92b766fb.chunk.css",
+    "static/js/main.6e791ef1.chunk.js"
+  ]
+}
