@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export default function ReceiptCard() {
     
     const userOrder = useSelector((state) => state.userOrder)
-
+    const error = useSelector((state) => state.userOrder)
     const time = moment(userOrder["return_time"]).format("HH:mm")
 
     return (
@@ -39,7 +39,6 @@ border-top: 5px solid ${({ color }) => color} ;
 width: 25vw;
 display:flex;
 flex-direction: column;
-
 `
 const TicketInfo = styled.div`
 display:flex;

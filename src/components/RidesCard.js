@@ -65,11 +65,20 @@ background-color:${({ backgroundColor }) => backgroundColor};
 margin:5px 0;
 padding: 5px 10px;
 border-top: 4px solid ${({ color }) => color} ;
-width: 12vw;
-height: 12vw;
+width: 140px;
+height: 140px;
 display:flex;
 flex-direction: column;
 justify-content:space-between;
+@media (max-width: 768px) {
+    width:25vw;
+    height: 25vw;
+  }
+@media (max-width: 480px) {
+    width:44vw;
+    height: 44vw;
+  }
+
 `
 const TicketInfo = styled.div`
 display:flex;
@@ -85,8 +94,14 @@ padding-bottom: 5px;
 const H2 = styled.div`
 align-self:flex-end;
 font-size: 0.9rem;
+@media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
 `
 const H1 = styled.div`
 color: white; 
 font-size: 1.3rem;
+@media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
 `

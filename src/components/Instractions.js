@@ -31,8 +31,15 @@ export default function Instractions() {
 const Container = styled.div`
 display: flex;
 justify-content: space-between;
+@media (max-width: 768px) {
+    flex-direction: column;
+    align-items:center;
+}
 `
 const Card = styled.div`
-width: 28%;
+width: 30%;
 font-size: 1.1rem;
+@media (max-width: 768px) {
+    width: 80%;
+  }
 `

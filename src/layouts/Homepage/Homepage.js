@@ -21,5 +21,12 @@ const Container = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-width: 50vw;
+width: 600px;
+
+@media (max-width: 768px) {
+  width: 80%;
+}
+@media (max-width: 480px) {
+  width: 90%;
+}
 `
