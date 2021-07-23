@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import InputBar from '../../components/InputBar'
 import Instractions from '../../components/Instractions'
 import RidesGallery from '../../components/RidesGallery'
 import Title from '../../components/Title'
 
-function Homepage() { 
+
+function Homepage() {
+  const state = useSelector(state => state)
+useEffect(()=>console.log("test state ",state),[state])
+
   return (
     <Container>
       <Title></Title>

@@ -9,16 +9,21 @@ export const getFastRiderRides = async (callbackSucss, callbackFailur) => {
             callbackSucss(response.data)
         })
         .catch(response => {
+            
             callbackFailur(response);
         });
 };
 
 export const postFastRiderTikets = async (callbackSucss, callbackFailur, pin, ride_id) => {
+   
     axios.post('/v1/tickets', { token: TOKEN, pin: pin, ride_id: ride_id })
         .then(response => {
+            console.log("response", response)
             callbackSucss(response);
         })
+       
         .catch(response => {
+            console.log("response-failyer", response.response.data)
             callbackFailur(response);
         });
 };
