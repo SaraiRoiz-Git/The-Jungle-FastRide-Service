@@ -71,8 +71,7 @@ display:flex;
 flex-direction: column;
 justify-content:space-between;
 &:hover {
-    cursor: ${({ available }) => available && 'pointer' };
-    background-color:#424242;
+    cursor: ${({ available }) => available && 'pointer'};
   }
 @media (max-width: 768px) {
     width:25.5vw;
