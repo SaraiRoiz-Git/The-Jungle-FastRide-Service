@@ -16,8 +16,8 @@ export default function InputBar(props) {
 
     const id = useSelector(state => state.id)
     const history = useHistory();
-
-    const callbackSucss = response => {
+    const display = props.display
+    const callbackSuccess = response => {
         if (response) {
             dispatch(action.onSubmit(response.data));
             history.push("/confirmation")
@@ -44,7 +44,7 @@ export default function InputBar(props) {
             setErrors('Incorrect pin number')
         }
         else {
-            postFastRiderTikets(callbackSucss, callbackFailur, inputValue, id)
+            postFastRiderTikets(callbackSuccess, callbackFailur, inputValue, id)
         }
 
     }
@@ -53,7 +53,7 @@ export default function InputBar(props) {
 
         <Container>
             <Input className="bo" type="text" placeholder="#PIN" name="pin" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-            <Button display={props.display} className="botton" type="button" onClick={() => onPinSubmit()}>SUBMIT</Button>
+            <Button display={display} className="botton" type="button" onClick={() => onPinSubmit()}>SUBMIT</Button>
             <Modal closeModal={() => setModal(false)} message={errors} display={modal} />
         </Container>
     )

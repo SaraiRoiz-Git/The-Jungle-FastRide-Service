@@ -20,7 +20,7 @@ export default function RidesCard(props) {
         if (id !== chosenId) {
             setChoose(false)
         }
-    }, [chosenId])
+    }, [chosenId,id])
 
     const updateCosenRide = () => {
         setChoose(!chosen)

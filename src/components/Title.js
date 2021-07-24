@@ -9,7 +9,7 @@ export default function Title() {
 
 const PageTitle = styled.div`
 display:flex;
-margin: 0 auto 2rem auto;
+margin: 1rem auto 2rem auto;
 `
 const H1 = styled.h1`
 font-weight: 300;

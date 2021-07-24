@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import InputBar from '../../components/InputBar'
 import Instractions from '../../components/Instractions'
@@ -7,11 +6,7 @@ import RidesGallery from '../../components/RidesGallery'
 import Title from '../../components/Title'
 
 export default function Homepage() {
-
-  const state = useSelector(state => state)
   let gallery = useRef(null)
-  
-  useEffect(() => console.log("test state ", state), [state])
   
   const [displayButton, setDisplayButton] = useState(false)
 

@@ -13,7 +13,7 @@ export default function RidesGallery(props) {
     const [errors, setError] = useState('')
     const [modal, setModal] = useState(false)
 
-    const callbackSucss = response => {
+    const callbackSuccess = response => {
         if (response) {
             dispatch(action.onEnter(response));
         }
@@ -25,14 +25,14 @@ export default function RidesGallery(props) {
     };
 
     useEffect(() => {
-        getFastRiderRides(callbackSucss, callbackFailur)
+        getFastRiderRides(callbackSuccess, callbackFailur)
     }, [])
 
     let list = useSelector(state => state.availableTickets)
 
-    const cardsList = list ? list.map(currCard => {
+    const cardsList = list ? list.map((currCard, i) => {
         return (
-            <RidesCard
+            <RidesCard key={i} id={i}
                 obj={currCard}
             />
         )
