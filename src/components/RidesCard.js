@@ -20,22 +20,28 @@ export default function RidesCard(props) {
         if (id !== chosenId) {
             setChoose(false)
         }
-    }, [chosenId,id])
+    }, [chosenId, id])
 
     const updateCosenRide = () => {
-        setChoose(!chosen)
-        chosen ? setRideId(id) : setRideId(0);
-        dispatch(action.onRideChoose(rideId))
+        if (data.remaining_tickets !== 0) {
+            setChoose(!chosen)
+            chosen ? setRideId(id) : setRideId(0);
+            dispatch(action.onRideChoose(rideId))
+        }
     }
 
-    const backgroundColor = () => chosen ? data.zone.color : '#373737';
-
+    const backgroundColor = () => {
+        if (data.remaining_tickets === 0) { return '#454545' }
+        if (chosen) { return data.zone.color }
+        return '#373737';
+    }
     return (
         <Container
             value={data.id}
             color={data.zone.color}
             onClick={updateCosenRide}
             backgroundColor={backgroundColor()}
+            available={data.remaining_tickets !== 0}
         >
             <H2>{data.zone.name}</H2>
             <H1>{data.name}</H1>
@@ -65,7 +71,8 @@ display:flex;
 flex-direction: column;
 justify-content:space-between;
 &:hover {
-    cursor: pointer;
+    cursor: ${({ available }) => available ? 'pointer' : 'not-allowed'};
+    background-color:#424242;
   }
 @media (max-width: 768px) {
     width:25.5vw;
@@ -89,14 +96,14 @@ padding-bottom: 5px;
 `
 const H2 = styled.div`
 align-self:flex-end;
-font-size: 0.9rem;
+font-size: 0.85rem;
 @media (max-width: 480px) {
     font-size: 1.1rem;
   }
 `
 const H1 = styled.div`
 color: white; 
-font-size: 1.3rem;
+font-size: 1.2rem;
 @media (max-width: 480px) {
     font-size: 1.5rem;
   }
