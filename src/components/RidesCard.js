@@ -31,7 +31,7 @@ export default function RidesCard(props) {
     }
 
     const backgroundColor = () => {
-        if (data.remaining_tickets === 0) { return '#454545' }
+        if (data.remaining_tickets === 0) { return '#555555' }
         if (chosen) { return data.zone.color }
         return '#373737';
     }
