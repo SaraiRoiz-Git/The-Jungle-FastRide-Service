@@ -21,7 +21,7 @@ export default function InputBar() {
         if (response) {
             console.log("callbackSucss", response.data)
             dispatch(action.onSubmit(response.data));
-            history.push("/confirmation")
+            history.push("#/confirmation")
         }
     }
 
