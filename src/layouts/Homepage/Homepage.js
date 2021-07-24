@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import InputBar from '../../components/InputBar'
@@ -7,20 +7,35 @@ import RidesGallery from '../../components/RidesGallery'
 import Title from '../../components/Title'
 
 
-function Homepage() {
+export default function Homepage() {
+
   const state = useSelector(state => state)
-useEffect(()=>console.log("test state ",state),[state])
+  let gallery = useRef(null)
+  useEffect(() => console.log("test state ", state), [state])
+  const [displayBotton, setDisplayBotton] = useState(false)
+
+  useEffect(() => {
+    window.addEventListener('scroll', function () {
+
+      var position = gallery.current.getBoundingClientRect();
+
+
+      // checking for partial visibility
+      if ((position.top +200) < (window.innerHeight) && position.bottom >= 0) {
+      setDisplayBotton(true)
+      }
+    })
+    }, []);
 
   return (
     <Container>
       <Title></Title>
       <Instractions />
-      <InputBar />
-      <RidesGallery />
+      <InputBar display={displayBotton} />
+      <RidesGallery galleryRef={gallery} />
     </Container>
   )
 }
-export default Homepage
 
 const Container = styled.div`
 display: flex;

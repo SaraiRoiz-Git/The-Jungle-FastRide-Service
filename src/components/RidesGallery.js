@@ -7,7 +7,7 @@ import * as action from "../redux/actions/actions";
 import { useEffect } from 'react';
 import { getFastRiderRides } from '../axios';
 
-export default function RidesGallery() {
+export default function RidesGallery(props) {
     const dispatch = useDispatch()
     const [error, setError] = useState('')
 
@@ -26,23 +26,23 @@ export default function RidesGallery() {
     }, [])
 
     let list = useSelector(state => state.availableTickets)
-   
-    const cardsList = list?list.map(currCard => {
+
+    const cardsList = list ? list.map(currCard => {
         return (
             <RidesCard
                 obj={currCard}
             />
         )
-    }):null
+    }) : null
 
     return (
-        <Container>
-             {cardsList}
-        </Container>
+        <Gallery ref={props.galleryRef}>
+            {cardsList}
+        </Gallery>
     )
 }
 
-const Container = styled.div`
+const Gallery = styled.div`
 display:flex;
 justify-content:space-between;
 flex-wrap: wrap;

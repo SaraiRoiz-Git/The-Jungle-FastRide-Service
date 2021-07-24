@@ -17,8 +17,6 @@ export default function RidesCard(props) {
     const chosenId = useSelector(state => state.id)
 
     useEffect(() => {
-        console.log("chosenId", chosenId, typeof chosenId)
-        console.log("Id", id, typeof id)
         if (id !== chosenId) {
             setChoose(false)
         }
@@ -70,6 +68,9 @@ height: 142px;
 display:flex;
 flex-direction: column;
 justify-content:space-between;
+&:hover {
+    cursor: pointer;
+  }
 @media (max-width: 768px) {
     width:25.5vw;
     height: 25.5vw;

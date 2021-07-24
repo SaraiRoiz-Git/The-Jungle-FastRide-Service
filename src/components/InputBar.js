@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import * as utils from "../utilities"
@@ -7,30 +7,25 @@ import { postFastRiderTikets } from '../axios';
 import { useHistory } from "react-router-dom";
 import Modal from './Modal';
 
-export default function InputBar() {
+export default function InputBar(props) {
 
     const dispatch = useDispatch()
     const [inputValue, setInputValue] = useState("")
     const [modal, setModal] = useState(false)
     const [errors, setErrors] = useState("")
     const id = useSelector(state => state.id)
-    const history = useHistory();
-
-
+    const history = useHistory();  
+  
     const callbackSucss = response => {
         if (response) {
-            console.log("callbackSucss", response.data)
             dispatch(action.onSubmit(response.data));
-            history.push("#/confirmation")
+            history.push("/confirmation")
         }
     }
 
     const callbackFailur = (response) => {
-        console.log("setErrors", response.response.data.message)
-
         dispatch(action.onSubmit(""));
         setErrors(response.response.data.message);
-        console.log("setErrors2", errors)
         setModal(true);
     };
 
@@ -53,11 +48,13 @@ export default function InputBar() {
         }
 
     }
+    console.log('props.display')
+    console.log(props.display)
     return (
 
         <Container>
-            <Input type="text" placeholder="#PIN" name="pin" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-            <Button type="button" onClick={() => onPinSubmit()}>SUBMIT</Button>
+            <Input className="bo"type="text" placeholder="#PIN" name="pin" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+            {props.display && <Button className="botton" type="button" onClick={() => onPinSubmit()}>SUBMIT</Button>}
             <Modal closeModal={() => setModal(false)} message={errors} display={modal} />
         </Container>
 
