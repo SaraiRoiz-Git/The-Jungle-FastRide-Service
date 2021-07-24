@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import * as utils from "../utilities"
@@ -13,9 +13,10 @@ export default function InputBar(props) {
     const [inputValue, setInputValue] = useState("")
     const [modal, setModal] = useState(false)
     const [errors, setErrors] = useState("")
+
     const id = useSelector(state => state.id)
-    const history = useHistory();  
-  
+    const history = useHistory();
+
     const callbackSucss = response => {
         if (response) {
             dispatch(action.onSubmit(response.data));
@@ -34,7 +35,7 @@ export default function InputBar(props) {
             setModal(true);
             setErrors("The Jungle FastRider is now close!  The opening hours is between 9:00 to 19:00 ")
         }
-        else if (id == 0) {
+        else if (id === 0) {
             setModal(true);
             setErrors("You need to choose a ride")
         }
@@ -44,20 +45,17 @@ export default function InputBar(props) {
         }
         else {
             postFastRiderTikets(callbackSucss, callbackFailur, inputValue, id)
-
         }
 
     }
-    console.log('props.display')
-    console.log(props.display)
+
     return (
 
         <Container>
-            <Input className="bo"type="text" placeholder="#PIN" name="pin" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-            {props.display && <Button className="botton" type="button" onClick={() => onPinSubmit()}>SUBMIT</Button>}
+            <Input className="bo" type="text" placeholder="#PIN" name="pin" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+            <Button display={props.display} className="botton" type="button" onClick={() => onPinSubmit()}>SUBMIT</Button>
             <Modal closeModal={() => setModal(false)} message={errors} display={modal} />
         </Container>
-
     )
 }
 
@@ -98,5 +96,6 @@ const Button = styled.button`
         right:0;
         bottom:0;
         font-size:1.1rem;
+        display:${({ display }) => display ? "bolck" : "none"};
       }
 `

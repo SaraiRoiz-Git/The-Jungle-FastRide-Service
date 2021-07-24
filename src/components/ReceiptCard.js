@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 export default function ReceiptCard() {
-    
     const userOrder = useSelector((state) => state.userOrder)
     const time = moment(userOrder["return_time"]).format("HH:mm")
 
@@ -35,7 +34,6 @@ background-color: #373737;
 margin:3rem auto;
 padding: 5px 10px 20px 10px;
 border-top: 5px solid ${({ color }) => color} ;
-
 display:flex;
 flex-direction: column;
 `

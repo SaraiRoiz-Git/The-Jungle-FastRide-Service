@@ -1,15 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function InstructionsCard(props) {
+export default function InstructionsCard(props) {
 
     return (
         <div>
-            <img className="image" src={props.img} alt="" />
+            <IMG src={props.img} alt="" />
             <p>{props.data}</p>
         </div>
     )
 }
 
-export default InstructionsCard
+const IMG = styled.img`
+background-color:   #373737 ;
+border-radius: 50%;
+padding: 5px;
+height: 3rem;
+position: relative;
+`
+
 

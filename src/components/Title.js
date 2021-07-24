@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export default function Title() {
     return (
         <PageTitle><H1>The Jungle</H1><Span>TM</Span> <H1> FastRider Service</H1></PageTitle>
-
     )
 }
 
@@ -20,7 +19,6 @@ color: white;
 @media (max-width: 480px) {
     font-size: 1.6rem;
   }
-
 `
 const Span = styled.div`
 color: white;
@@ -29,5 +27,5 @@ margin-right: 0.8em;
 padding-top: 2rem;
 @media (max-width: 480px) {
     padding-top: 1.6rem;
-  }
+}
 `

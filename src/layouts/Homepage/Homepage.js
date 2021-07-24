@@ -6,32 +6,32 @@ import Instractions from '../../components/Instractions'
 import RidesGallery from '../../components/RidesGallery'
 import Title from '../../components/Title'
 
-
 export default function Homepage() {
 
   const state = useSelector(state => state)
   let gallery = useRef(null)
+  
   useEffect(() => console.log("test state ", state), [state])
-  const [displayBotton, setDisplayBotton] = useState(false)
+  
+  const [displayButton, setDisplayButton] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', function () {
-
       var position = gallery.current.getBoundingClientRect();
-
-
-      // checking for partial visibility
-      if ((position.top +200) < (window.innerHeight) && position.bottom >= 0) {
-      setDisplayBotton(true)
+      if ((position.top + 200) < (window.innerHeight) && position.bottom >= 0) {
+        setDisplayButton(true)
+      } else {
+        setDisplayButton(false)
       }
+
     })
-    }, []);
+  }, []);
 
   return (
     <Container>
       <Title></Title>
       <Instractions />
-      <InputBar display={displayBotton} />
+      <InputBar display={displayButton} />
       <RidesGallery galleryRef={gallery} />
     </Container>
   )

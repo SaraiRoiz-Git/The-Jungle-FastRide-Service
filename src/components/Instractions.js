@@ -2,14 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import InstructionsCard from './InstructionsCard'
 
-
 export default function Instractions() {
     return (
         <Container>
             <Card>
                 <InstructionsCard
                     img={require("../img/ico-01.svg").default}
-                    data='Enter your park ticket #PIN number, then select the desired ride while noting the ststed return time'
+                    data='Enter your park ticket #PIN number, then select the desired ride while noting the stated return time'
                 />
             </Card>
             <Card>

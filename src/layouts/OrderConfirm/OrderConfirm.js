@@ -4,10 +4,8 @@ import InstructionsCard from '../../components/InstructionsCard'
 import ReceiptCard from '../../components/ReceiptCard'
 import Title from '../../components/Title'
 
-
 export default function OrderConfirm() {
     return (
-
         <Container>
             <Title />
             <AnswerContainer>
@@ -17,8 +15,6 @@ export default function OrderConfirm() {
                 />
                 <ReceiptCard />
             </AnswerContainer>
-
-
         </Container>
     )
 }
@@ -32,10 +28,10 @@ const AnswerContainer = styled.div`
 width: 30vw;
 @media (max-width: 768px) {
     width: 80%;
-  }
+}
   @media (max-width: 480px) {
     width: 90%;
-  }
+}
   
 `
 

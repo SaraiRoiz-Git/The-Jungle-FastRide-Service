@@ -6,10 +6,12 @@ import { useState } from 'react';
 import * as action from "../redux/actions/actions";
 import { useEffect } from 'react';
 import { getFastRiderRides } from '../axios';
+import Modal from './Modal';
 
 export default function RidesGallery(props) {
     const dispatch = useDispatch()
-    const [error, setError] = useState('')
+    const [errors, setError] = useState('')
+    const [modal, setModal] = useState(false)
 
     const callbackSucss = response => {
         if (response) {
@@ -18,7 +20,8 @@ export default function RidesGallery(props) {
     }
 
     const callbackFailur = () => {
-        setError("Email is alredy exit");
+        setError("Problem with server");
+        setModal(true);
     };
 
     useEffect(() => {
@@ -38,6 +41,7 @@ export default function RidesGallery(props) {
     return (
         <Gallery ref={props.galleryRef}>
             {cardsList}
+            <Modal closeModal={() => setModal(false)} message={errors} display={modal} />
         </Gallery>
     )
 }
@@ -46,4 +50,5 @@ const Gallery = styled.div`
 display:flex;
 justify-content:space-between;
 flex-wrap: wrap;
+margin-bottom:100px;
 `

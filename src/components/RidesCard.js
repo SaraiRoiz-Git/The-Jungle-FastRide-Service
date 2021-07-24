@@ -26,7 +26,6 @@ export default function RidesCard(props) {
         setChoose(!chosen)
         chosen ? setRideId(id) : setRideId(0);
         dispatch(action.onRideChoose(rideId))
-
     }
 
     const backgroundColor = () => chosen ? data.zone.color : '#373737';
@@ -38,22 +37,19 @@ export default function RidesCard(props) {
             onClick={updateCosenRide}
             backgroundColor={backgroundColor()}
         >
-
             <H2>{data.zone.name}</H2>
             <H1>{data.name}</H1>
             <TicketInfo>
                 <Info>
-                    <img src={require('../img/ico-g-03.svg').default} alt="" />
+                    <IMG src={require('../img/ico-g-03.svg').default} alt="" />
                     <div>{time}</div>
                 </Info>
                 <Info >
-                    <img src={require('../img/ico-g-01.svg').default} alt="" />
+                    <IMG src={require('../img/ico-g-01.svg').default} alt="" />
                     <div>{data.remaining_tickets}</div>
                 </Info>
 
             </TicketInfo>
-
-
         </Container>
     )
 }
@@ -79,7 +75,6 @@ justify-content:space-between;
     width:44vw;
     height: 44vw;
   }
-
 `
 const TicketInfo = styled.div`
 display:flex;
@@ -105,4 +100,10 @@ font-size: 1.3rem;
 @media (max-width: 480px) {
     font-size: 1.5rem;
   }
+`
+const IMG = styled.img`
+height: 1.2rem;
+@media (max-width: 480px) {
+    height: 1.5rem;
+}
 `

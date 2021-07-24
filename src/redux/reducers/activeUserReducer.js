@@ -13,6 +13,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         availableTickets: action.payload
       };
+    
     case AT.ON_SUBMIT:
       return {
         ...state,

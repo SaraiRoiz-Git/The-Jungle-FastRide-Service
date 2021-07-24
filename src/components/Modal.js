@@ -25,6 +25,9 @@ border:0.5px solid white  ;
 
 @media (max-width: 480px) {
     width: 90vw;
+    position: none;
+    left:0;
+    margin-left:0;
 }
 `
 const Close = styled.div`
