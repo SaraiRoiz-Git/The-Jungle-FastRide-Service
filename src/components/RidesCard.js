@@ -13,7 +13,7 @@ export default function RidesCard(props) {
     const [chosen, setChoose] = useState(false);
     const [rideId, setRideId] = useState(id)
 
-    const time = moment(data.retuidme).format("HH:mm")
+    const time = moment(data.return_time).format("HH:mm")
     const chosenId = useSelector(state => state.id)
 
     useEffect(() => {
