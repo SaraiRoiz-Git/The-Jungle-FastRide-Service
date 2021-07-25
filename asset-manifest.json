@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/The-Jungle-FastRide-Service/static/css/main.22ca8cf3.chunk.css",
-    "main.js": "/The-Jungle-FastRide-Service/static/js/main.7b619c17.chunk.js",
-    "main.js.map": "/The-Jungle-FastRide-Service/static/js/main.7b619c17.chunk.js.map",
+    "main.js": "/The-Jungle-FastRide-Service/static/js/main.f9c5ea70.chunk.js",
+    "main.js.map": "/The-Jungle-FastRide-Service/static/js/main.f9c5ea70.chunk.js.map",
     "runtime-main.js": "/The-Jungle-FastRide-Service/static/js/runtime-main.78b0a4be.js",
     "runtime-main.js.map": "/The-Jungle-FastRide-Service/static/js/runtime-main.78b0a4be.js.map",
     "static/js/2.38f4a699.chunk.js": "/The-Jungle-FastRide-Service/static/js/2.38f4a699.chunk.js",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.78b0a4be.js",
     "static/js/2.38f4a699.chunk.js",
     "static/css/main.22ca8cf3.chunk.css",
-    "static/js/main.7b619c17.chunk.js"
+    "static/js/main.f9c5ea70.chunk.js"
   ]
 }
