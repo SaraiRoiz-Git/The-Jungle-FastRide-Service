@@ -6,7 +6,7 @@ import RidesGallery from '../../components/RidesGallery'
 import Title from '../../components/Title'
 
 export default function Homepage() {
-  let gallery = useRef(null)
+  let gallery = useRef("")
   
   const [displayButton, setDisplayButton] = useState(false)
 
